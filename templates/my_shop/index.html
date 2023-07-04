@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+{% for product in products %}
+    {{ product.name }}<br>
+    {{ product.amount }} {{ product.currency }}
+    <img src="{% if product.photo %}{{ product.photo.url }}{% endif %}">
+{% endfor %}
+</body>
+</html>
