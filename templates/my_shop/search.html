@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% for product in products %}
+
+        <div class="fashion_section">
+        <div id="main_slider" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="container">
+                <h1 class="fashion_taital">{{ product.category.name }}</h1>
+                <br>
+                <br>
+                <div class="fashion_section_2">
+                    <div class="row">
+
+{#                            {% if product.categories.name == cat.name %}#}
+                                <div class="col-lg-4 col-sm-4">
+                                    <div class="box_main">
+                                        <h4 class="shirt_text">{{ product.name }} {{ product.model }}</h4>
+                                        <p class="price_text">Price <span style="color: #262626;">{{ product.amount }}
+                                            {{ product.currency }}</span></p>
+                                        <div class="tshirt_img"><img src="{{ product.photo.url }}"></div>
+                                        <div class="btn_main">
+                                            <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                            <div class="seemore_bt"><a href="{% url 'products:ditail' product.pk %}">See
+                                                More</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+{#                            {% endif %}#}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    <div>
+        <div>
+            <a class="carousel-control-prev" href="#jewellery_main_slider" role="button" data-slide="prev">
+                <i class="fa fa-angle-left"></i>
+            </a>
+            <a class="carousel-control-next" href="#jewellery_main_slider" role="button" data-slide="next">
+                <i class="fa fa-angle-right"></i>
+            </a>
+            <div class="loader_main">
+                <div class="loader"></div>
+            </div>
+        </div>
+    </div>
+    <!-- jewellery  section end -->
+{% endblock %}

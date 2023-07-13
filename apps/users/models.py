@@ -3,11 +3,13 @@ from django.contrib.auth.models import User
 from phonenumber_field.modelfields import PhoneNumberField
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from helpers.choices import CategoryTypeChoices
 
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, blank=True)
     photo = models.ImageField(upload_to='profile_photo', blank=True)
+    category = models.CharField(max_length=50, choices=CategoryTypeChoices.choices)
     phone = PhoneNumberField(blank=True, help_text='Phone number')
 
     def __str__(self):

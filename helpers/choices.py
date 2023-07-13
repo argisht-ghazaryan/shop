@@ -31,3 +31,8 @@ class CategoriesTypeChoices(models.TextChoices):
     accessories = 'ACCESSORIES', 'Accessories'
     sport = 'SPORT', 'Sport'
     food = 'FOOD', 'Food'
+
+
+class CategoryTypeChoices(models.TextChoices):
+    client = 'CLIENT', 'client'
+    salesman = 'SALESMAN', 'salesman'
