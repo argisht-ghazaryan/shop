@@ -32,6 +32,11 @@ def ditail_view(request, pk):
     page_number = request.GET.get("page")
     cat_list = paginator.get_page(page_number)
     price_off = product.amount - (product.amount * 20) // 100
+
+    if request.method == "POST":
+        messages.success(request, f"{product.name} added to your cart.")
+        return redirect("cart:add_to_cart", product_id=product.id)
+
     context = {
         'product': product,
         'title': f'{product.name} Ditail',
