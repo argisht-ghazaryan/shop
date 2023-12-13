@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-{% for product in products %}
+    {% for product in products %}
 
         <div class="fashion_section">
         <div id="main_slider" class="carousel slide" data-ride="carousel">
@@ -15,38 +15,40 @@
                 <div class="fashion_section_2">
                     <div class="row">
 
-{#                            {% if product.categories.name == cat.name %}#}
-                                <div class="col-lg-4 col-sm-4">
-                                    <div class="box_main">
-                                        <h4 class="shirt_text">{{ product.name }} {{ product.model }}</h4>
-                                        <p class="price_text">Price <span style="color: #262626;">{{ product.amount }}
-                                            {{ product.currency }}</span></p>
-                                        <div class="tshirt_img"><img src="{{ product.photo.url }}"></div>
-                                        <div class="btn_main">
-                                            <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                            <div class="seemore_bt"><a href="{% url 'products:ditail' product.pk %}">See
-                                                More</a></div>
-                                        </div>
-                                    </div>
+                        {#                            {% if product.categories.name == cat.name %}#}
+                        <div class="col-lg-4 col-sm-4">
+                            <div class="box_main">
+                                <h4 class="shirt_text">{{ product.name }} {{ product.model }}</h4>
+                                <p class="price_text">Price <span style="color: #262626;">{{ product.amount }}
+                                    {{ product.currency }}</span></p>
+                                <div class="tshirt_img"><img src="{{ product.photo.url }}"></div>
+                                <div class="btn_main">
+                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                    <div class="seemore_bt"><a href="{% url 'products:ditail' product.pk %}">See
+                                        More</a></div>
                                 </div>
-{#                            {% endif %}#}
+                            </div>
+                        </div>
+                        {#                            {% endif %}#}
                     </div>
                 </div>
             </div>
         </div>
     {% endfor %}
+<div>
     <div>
-        <div>
-            <a class="carousel-control-prev" href="#jewellery_main_slider" role="button" data-slide="prev">
-                <i class="fa fa-angle-left"></i>
-            </a>
-            <a class="carousel-control-next" href="#jewellery_main_slider" role="button" data-slide="next">
-                <i class="fa fa-angle-right"></i>
-            </a>
-            <div class="loader_main">
-                <div class="loader"></div>
-            </div>
+        <a class="carousel-control-prev" href="#jewellery_main_slider" role="button" data-slide="prev">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        <a class="carousel-control-next" href="#jewellery_main_slider" role="button" data-slide="next">
+            <i class="fa fa-angle-right"></i>
+        </a>
+        <div class="loader_main">
+            <div class="loader"></div>
         </div>
     </div>
-    <!-- jewellery  section end -->
+</div>
+</div>
+</div>
+</div>
 {% endblock %}
